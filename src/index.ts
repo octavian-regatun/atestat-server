@@ -11,6 +11,10 @@ import cors from "cors";
 
   const PORT = 3001;
 
+  app.use("/",(req,res)=>{
+    res.send('server is working')
+  })
+  
   app.use(cors());
   app.use("/forecast", forecast);
   app.use("/autocomplete", autocomplete);
