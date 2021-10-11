@@ -9,12 +9,12 @@ import cors from "cors";
 (async () => {
   const app: Application = express();
 
-  const PORT = 3001;
+  const PORT = process.env.PORT || 3001;
 
   app.use("/",(req,res)=>{
     res.send('server is working')
   })
-  
+
   app.use(cors());
   app.use("/forecast", forecast);
   app.use("/autocomplete", autocomplete);
