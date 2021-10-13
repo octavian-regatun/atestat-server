@@ -5,6 +5,7 @@ import express, { Application, Request, Response } from "express";
 import { autocomplete } from "./routes/autocomplete";
 import { forecast } from "./routes/forecast";
 import cors from "cors";
+import { currentLocation } from "./routes/currentLocation";
 
 (async () => {
   const app: Application = express();
@@ -18,6 +19,7 @@ import cors from "cors";
   app.use(cors());
   app.use("/forecast", forecast);
   app.use("/autocomplete", autocomplete);
+  app.use("/currentLocation", currentLocation);
 
   app.listen(PORT, () => {
     console.log(`app is listening on port ${PORT}`);
