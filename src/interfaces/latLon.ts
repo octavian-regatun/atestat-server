@@ -1,4 +1,4 @@
 export default interface LatLon {
-  lat: number | null;
-  lon: number | null;
+  lat: number;
+  lon: number;
 }
